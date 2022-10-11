@@ -1,0 +1,2 @@
+#!/bin/bash
+export POWER="10000\n"export DIVIDE="10\n"echo $((POWER/DIVIDE))
