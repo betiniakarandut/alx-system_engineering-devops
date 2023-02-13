@@ -1,0 +1,1 @@
+Command line for the win. A project to test and upgrade my bash skills.
