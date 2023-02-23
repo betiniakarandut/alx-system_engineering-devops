@@ -1,7 +1,7 @@
 # 0x04. Loops, conditions and parsing
 
 ## Description
-This Holberton School is about shell loops, conditions, and parsing. Most importantly, I learnt how to create `SSH keys`. How to use `while`, `until` and `for` loops. How to use `if`, `else`, `elif`, and `case` condition statements. How to use `cut` command, and files and other comparison operators.
+This Holberton School project is about shell loops, conditions, and parsing. Most importantly, I learnt how to create `SSH keys`. How to use `while`, `until` and `for` loops. How to use `if`, `else`, `elif`, and `case` condition statements. How to use `cut` command, and files and other comparison operators.
 
 ## More info
 
@@ -16,7 +16,7 @@ Files | Desciption
 [2. While Best School loop](./2-while_best_school) | Bash script that displays `Best School` 10 times.
 [3. Until Best School loop](./3-until_best_school) | Bash script that displays `Best School` 10 times.
 [4. If 9, say Hi!](./4-if_9_say_hi) | Bash script that displays `Best School` 10 times, but for the 9th iteration, displays `Best School` and then `Hi` on a new line.
-[5. 4 bad luck, 8 is your chance](./5-4_bad_luck_8_is_your_chance) | Bash script that loops from 1 to 10 and: displays `bad luck` for the 4th loop iteration * displays `good luck` for the 8th loop iteration * displays `Best School` for the other iterations
+[5. 4 bad luck, 8 is your chance](./5-4_bad_luck_8_is_your_chance) | Bash script that loops from 1 to 10 and: displays `bad luck` for the 4th loop iteration. displays `good luck` for the 8th loop iteration displays `Best School` for the other iterations
 [6. Superstitious numbers](./6-superstitious_numbers) | Bash script that displays numbers from 1 to 20 and: displays `4` and then `bad luck from China` for the 4th loop iteration. displays `9` and then `bad luck from Japan` for the 9th loop iteration. displays `17` and then `bad luck from Italy` for the 17th loop iteration
 [7. Clock](./7-clock) | Bash script that displays the time for 12 hours and 59 minutes: display hours from 0 to 12. display minutes from 1 to 59
 [8. For ls](./8-for_ls) | Bash script that displays: The content of the current directory. In a list format. Where only the part of the name after the first dash is displayed (refer to the example)
