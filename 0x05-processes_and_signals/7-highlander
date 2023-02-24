@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Highlander
+
+# prints "I am invinscible!!! when SIGTERM is received"
+trap "echo I am invinscible!!!" SIGTERM
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done;
+
