@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# 100-process_and_pid_file
+
+# Process and PID
+file="/var/runmyscript.pid"
+
+if [ ! -e "$file" ]; then
+	touch "$file"
+fi
+
+sleep 2 &
+
+echo "$!" > "$file"
+
+# prints I hate kill command when receiving a SIGTERM signal
+trap 'echo "I hate the kill command"; rm "$file"; exit;' SIGTERM SIGQUIT
+
+# Y U no love me?! when receiving a SIGINT signal
+trap 'echo ""Y U no love me?!" SIGINT
+
+while true; do
+	echo "To infinity beyond"
+	sleep 2
+done
