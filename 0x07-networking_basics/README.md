@@ -18,7 +18,7 @@
 - [Positional parameters](https://wiki.bash-hackers.org/scripting/posparams)
 
 ## Description
-In this project, I learnt about Networking: OSI(Open Systems Interconnection), WAN(Wide Area Network), LAN(Land Area Network), Internet, TCP/UDP
+In this project, I learnt about Networking: OSI(Open Systems Interconnection), WAN(Wide Area Network), LAN(Local Area Network), Internet, TCP/UDP
 
 ## Table of contents
 
