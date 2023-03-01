@@ -2,4 +2,3 @@
 # list all processes
 
 ps -auxf | grep bash
-

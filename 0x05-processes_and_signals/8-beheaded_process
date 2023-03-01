@@ -3,4 +3,3 @@
 
 # kills the 7-highlander process
 pgrep -f 7-highlander | xargs kill -9
-

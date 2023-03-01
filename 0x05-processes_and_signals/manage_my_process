@@ -7,4 +7,3 @@ while true; do
 	echo "I am alive!" >> "$file"
 	sleep 2
 done
-

@@ -2,4 +2,3 @@
 # PID made easy
 
 pgrep -l bash
-
