@@ -4,7 +4,7 @@
 
 ## Description
 
-- This repository consists of all the projects done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with [Holberton School](https://www.holbertonschool.com/) by [th3\_gr00t](https://th3-gr00t.tk/).
+- This repository consists of all the projects done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with [Holberton School](https://www.holbertonschool.com/) by [betiniakarandut](https://github.com/betiniakarandut).
 
 ---
 
