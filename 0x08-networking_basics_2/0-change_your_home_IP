@@ -7,3 +7,6 @@ echo "127.0.0.2 localhost" >> /etc/hosts
 
 # Add facebook.com entry to /etc/hosts
 echo "8.8.8.8 facebook.com" >> /etc/hosts
+
+# Restart networking service connection
+systemctl restart networking.service
