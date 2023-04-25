@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 # Creates an RSA key pair with the passphrase betty
-ssh-keygen -t rsa -b 4096 -f school -N betty
+passphrase='betty'
+encryption_bits=4096
+private_key_file_name='school'
+encryption_type='rsa'
+
+ssh-keygen -b $encryption_bits -t $encryption_type -N $passphrase -f $private_key_file_name
