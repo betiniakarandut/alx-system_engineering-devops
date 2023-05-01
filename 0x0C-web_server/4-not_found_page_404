@@ -1,11 +1,26 @@
 #!/usr/bin/env bash
-# configures an Nginx server to have a custom 404 page that contains the string 'Ceci n'est pas une page'
+# This Script Performs an apt update
+# Installs nginx web server
+# adds some content to the landing page
+# Adds a permanent redirect to a youtube url
+# Finally Starts the nginx service
 
 apt-get -y update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
-echo 'Holberton School' > /var/www/html/index.nginx-debian.html
-sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
-sed -i '/server_name _;/a error_page 404 /custom_404.html;\nlocation = /custom_404.html {\nroot /usr/share/nginx/html;\ninternal;\n}' /etc/nginx/sites-available/default
-service nginx start
+apt-get install -y nginx
+echo "Hello World!                 " > /var/www/html/index.html
+
+data="location /redirect_me {return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;} "
+sed -i "/^\s*server_name _*/a $data" /etc/nginx/sites-enabled/default
+
+echo -e "Ceci n'est pas une page \n" > /var/www/html/404.html
+mkdir -p /etc/nginx/snippets;
+snippet_path="/etc/nginx/snippets/error-page.conf"
+echo -e "error_page 404 /404.html;
+location = /404.html {
+        root /var/www/html;
+        internal;
+}" > $snippet_path;
+snippet_data="include snippets/error-page.conf;"
+sed -i "/^\s*server_name _*/i $snippet_data" /etc/nginx/sites-enabled/default
+
+/etc/init.d/nginx restart
