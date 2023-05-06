@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Installation and configuration of HAProxy
+
+#Installation
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository ppa:vbernat/haproxy
+
+sudo apt update
+sudo apt install -y haproxy
+
+#Configuration
+sudo sed -i '/#EXTRAOPTS="-de -m 16"/a ENABLED=1' /etc/default/haproxy
+sudo cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg
+global
+    log /dev/log local0
+    log /dev/log local1 notice
+    chroot /var/lib/haproxy
+    stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+    stats timeout 30s
+    user haproxy
+    group haproxy
+    daemon
+
+defaults
+    log global
+    mode http
+    option httplog
+    option dontlognull
+    timeout connect 5000
+    timeout client 50000
+    timeout server 50000
+
+frontend http_front
+    bind *:80
+    mode http
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    mode http
+    server 54.146.87.173:80 check
+    server 100.26.132.12:80 check
+EOF
+
+#Starts haproxy
+sudo service start haproxy
