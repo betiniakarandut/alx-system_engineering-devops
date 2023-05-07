@@ -5,3 +5,6 @@ sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 sudo service nginx start
+sudo apt-get install curl
+sudo curl -4 icanhazip.com
+curl localhost
