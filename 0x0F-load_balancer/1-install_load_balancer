@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
-# Installation and configuration of HAProxy
-
-#Installation
-apt-get install --no-install-recommends software-properties-common
-add-apt-repository ppa:vbernat/haproxy
-
-sudo apt update
-sudo apt install -y haproxy
-
-#Configuration
+# Configuration of HAProxy
 sudo sed -i '/#EXTRAOPTS="-de -m 16"/a ENABLED=1' /etc/default/haproxy
 sudo cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg
 global
@@ -42,5 +33,5 @@ backend http_back
     server web-02 54.224.50.203:80 check
 EOF
 
-#Starts haproxy
-sudo service start haproxy
+#init script management
+sudo /etc/init.d/haproxy reload
