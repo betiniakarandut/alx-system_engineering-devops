@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Configuration of HAProxy
+# Installation and Configuration of HAProxy
+sudo apt-get -y update
+sudo apt-get -y haproxy
 sudo sed -i '/#EXTRAOPTS="-de -m 16"/a ENABLED=1' /etc/default/haproxy
 sudo cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg
 global
@@ -34,4 +36,4 @@ backend http_back
 EOF
 
 #init script management
-sudo /etc/init.d/haproxy reload
+sudo /etc/init.d/haproxy start
