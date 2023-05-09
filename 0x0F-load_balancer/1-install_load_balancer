@@ -38,8 +38,8 @@ frontend http_front
 backend http_back
     balance roundrobin
     mode http
-    server 54.146.87.173:80 check
-    server 100.26.132.12:80 check
+    server web-01 52.207.77.219:80 check
+    server web-02 54.224.50.203:80 check
 EOF
 
 #Starts haproxy
