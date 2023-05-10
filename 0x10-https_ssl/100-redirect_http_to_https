@@ -1,0 +1,63 @@
+global
+    log /dev/log local0
+    log /dev/log local1 notice
+    chroot /var/lib/haproxy
+    stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+    stats timeout 30s
+    user haproxy
+    group haproxy
+    daemon
+
+defaults
+    option forwardfor
+    option http-server-close
+    log global
+    mode http
+    option httplog
+    option dontlognull
+    timeout connect 5000
+    timeout client 50000
+    timeout server 50000
+    errorfile 400 /etc/haproxy/errors/400.http
+    errorfile 403 /etc/haproxy/errors/403.http
+    errorfile 408 /etc/haproxy/errors/408.http
+    errorfile 500 /etc/haproxy/errors/500.http
+    errorfile 502 /etc/haproxy/errors/502.http
+    errorfile 503 /etc/haproxy/errors/503.http
+    errorfile 504 /etc/haproxy/errors/504.http
+
+frontend http_front
+    bind *:80
+    bind *:443 ssl crt /etc/ssl/www.zaneiq.tech/www.zaneiq.tech.pem
+    mode http
+
+    redirect scheme https code 301 if !{ ssl_fc }
+
+    # New line to test URI to see if its a letsencrypt request
+    acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+    use_backend letsencrypt-backend if letsencrypt-acl
+
+    # Say Holberton for the win!
+    use_backend hbtn_back if { path / }
+
+    use_backend be-zaneiq
+
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    mode http
+    server web-01 52.207.77.219:80 check
+    server web-02 54.224.50.203:80 check
+
+backend hbtn_back
+    mode http
+    option http-server-close
+    option forwardfor
+    server web-01 52.207.77.219:80 check
+
+backend letsencrypt-backend
+    server letsencrypt 127.0.0.1:8888
+
+backend be-zaneiq
+    server www 35.174.205.29:80
