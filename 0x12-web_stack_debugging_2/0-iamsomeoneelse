@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# tell whoami
+whoami=$1
+echo "$whoami"
