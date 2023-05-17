@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Running Nginx as nginx user instead of root
+pkill apache2
 sudo adduser --system --no-create-home --disabled-login --disabled-password --group nginx
-sudo sed -i 's/user .*/user nginx;/' /etc/nginx/nginx.conf
+sudo chmod 777 nginx
 sudo sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 sudo service nginx restart
