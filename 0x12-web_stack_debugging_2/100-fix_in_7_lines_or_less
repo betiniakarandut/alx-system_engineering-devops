@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Task 1 in a short and sweet 7 lines or less
-adduser --system --no-create-home --disabled-login --disabled-password --group nginx
-chmod 777 /etc/nginx/nginx.conf
-sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+# Short and sweet
+sudo adduser --system --no-create-home --disabled-login --disabled-password --group nginx
+sudo chmod 777 /etc/nginx/nginx.conf
+sudo sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 sudo -u nginx service nginx restart
