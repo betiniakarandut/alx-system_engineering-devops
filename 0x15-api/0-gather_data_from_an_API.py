@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""For a given employee ID, returns information about
+"""A script that display user ID information and
 their TODO list progress"""
 
 import requests
