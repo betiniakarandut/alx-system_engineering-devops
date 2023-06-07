@@ -6,7 +6,6 @@ import sys as s
 
 def number_of_subscribers(subreddit):
     """function that queries the Reddit API.
-    
     Args:
         subreddit: str
 
