@@ -15,3 +15,11 @@ Please, remember that these blogs must be written in English to further your tec
 <br>
 <br>
 [Find here my first postmortem](https://docs.google.com/document/d/1dqZYeNkAYnl_hPwVQWCtFVc1CvFpZAPtKx-OIqcLy5k/edit?usp=drivesdk)
+
+2<br>We are constantly stormed by a quantity of information, it’s tough to get people to read you.
+<br>
+Make your post-mortem attractive by adding humour, a pretty diagram or anything that would catch your audience attention.
+<br>
+Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
+<br>
+
