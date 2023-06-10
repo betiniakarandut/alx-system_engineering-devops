@@ -13,4 +13,5 @@ While postmortem format can vary, stick to this one so that you can get properly
 <br>
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
 <br>
-[0. My first postmortem](https://docs.google.com/document/d/1dqZYeNkAYnl_hPwVQWCtFVc1CvFpZAPtKx-OIqcLy5k/edit?usp=drivesdk)
+<br>
+[Find here my first postmortem](https://docs.google.com/document/d/1dqZYeNkAYnl_hPwVQWCtFVc1CvFpZAPtKx-OIqcLy5k/edit?usp=drivesdk)
