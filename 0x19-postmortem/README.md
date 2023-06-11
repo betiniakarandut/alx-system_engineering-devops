@@ -22,4 +22,4 @@ Make your post-mortem attractive by adding humour, a pretty diagram or anything 
 <br>
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
 <br>
-
+[Here is a digram for my first Postmortem](https://imgur.com/a/PwWdVn6)
