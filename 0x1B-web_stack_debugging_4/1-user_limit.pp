@@ -2,7 +2,7 @@
 exec {'file-1':
   provider => shell,
   command  => 'sudo sed -i "s/nofile 5/nofile 50000/" /etc/security/limits.conf',
-  before   => Exec['replace-2'],
+  before   => Exec['file-2'],
 }
 
 exec {'file-2':
