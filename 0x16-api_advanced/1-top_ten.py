@@ -1,21 +1,26 @@
 #!/usr/bin/python3
 """Module for hot post"""
-import sys as s
-import requests
 
 
 def top_ten(subreddit):
-    """prints the titles of the first 10 hot posts listed for a given subreddit."""
-    subreddit = s.argv[1]
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
-    headers = {"User-Agent": "SpyBot"}
-    response = requests.get(url, headers=headers)
-    
-    if response.status_code >= 300:
-        return None
+    """
+    prints the titles of the first 10 hot posts
+    listed for a given subreddit
+
+    Args:
+        subreddit: str
+
+    Returns:
+        redirect to search results if invalid subreddits
+    """
+    import requests
+
+    sub_info = requests.get("https://www.reddit.com/r/{}/hot.json?limit=10"
+                            .format(subreddit),
+                            headers={"User-Agent": "My-User-Agent"},
+                            allow_redirects=False)
+    if sub_info.status_code >= 300:
+        print('None')
     else:
-       data = response.json()
-       hotPost = data["data"]["children"]
-       for index, hot in enumerate(hotPost, start=1):
-           hots = hot["data"]["title"]
-           print(hots)
+        [print(child.get("data").get("title"))
+         for child in sub_info.json().get("data").get("children")]
