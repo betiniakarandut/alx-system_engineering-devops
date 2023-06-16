@@ -3,7 +3,8 @@
 
 
 def count_words(subreddit, word_list, word_count={}, after=None):
-    """prints a sorted count of given keywords (case-insensitive, delimited by spaces.
+    """prints a sorted count of given keywords
+    (case-insensitive, delimited by spaces.
     Javascript should count as javascript, but java should not).
 
     Args:
